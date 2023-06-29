@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if record %}
+
+<div class="card">
+    <h5 class="card-header">{{record.first_name}} {{record.last_name}}</h5>
+    <div class="card-body">
+      <h5 class="card-title mb-3">Fullname: {{record.first_name}} {{record.last_name}}</h5>
+      <p class="card-text"><strong>Email: </strong>{{record.email}}</p>
+      <p class="card-text"><strong>Phone: </strong>{{record.phone}}</p>
+      <p class="card-text"><strong>Address: </strong>{{record.address}}</p>
+      <p class="card-text"><strong>City: </strong>{{record.city}}</p>
+      <p class="card-text"><strong>State: </strong>{{record.state}}</p>
+      <p class="card-text"><strong>Zipcode: </strong>{{record.zipcode}}</p>
+    </div>
+</div>
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+<a href="{% url 'delete' record.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'update_record' record.id %}" class="btn btn-info">Edit</a>
+
+{% endif %}
+
+{% endblock %}
