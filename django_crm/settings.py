@@ -66,11 +66,11 @@ WSGI_APPLICATION = 'django_crm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabase',
+        'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': '@Long170502',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'PASSWORD': 'XRlzYuELWXxjnDw5OTIG',
+        'HOST': 'containers-us-west-193.railway.app',
+        'PORT': '6734'
     }
 }
 
@@ -116,3 +116,6 @@ STATIC_ROOT = BASE_DIR / 'productionfiles'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
