@@ -15,6 +15,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["https://web-production-1bef.up.railway.app/"]
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 CSRF_TRUSTED_ORIGINS = ['https://web-production-1bef.up.railway.app/']
 
 
