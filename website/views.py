@@ -4,10 +4,16 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import SignUpForm, AddRecordForm
 from .models import Record
+from django.db.models import Q
 
 
 def home(request):
-    records = Record.objects.all()
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    # records = Record.objects.all()
+    records = Record.objects.filter(
+        Q(first_name__icontains=q) | 
+        Q(last_name__icontains=q)
+    )
 
     # check to see if logging in
     if request.method == 'POST':
